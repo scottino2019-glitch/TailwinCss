@@ -1932,9 +1932,24 @@ function createProject4Content() {
     };
 }
 
-        function previewProject(projectId) {
-            const code = document.getElementById(`project${projectId}-code`).value;
-            const preview = document.getElementById(`project${projectId}-preview`);
+     function getProjectData(projectId) {
+    if (projectId === 1) {
+        return {
+            title: "🏠 Progetto: Landing Page Moderna",
+            content: createProject1Content()
+        };
+    } else if (projectId === 2) {
+        return {
+            title: "🛒 Progetto: Card E-commerce Interattiva", 
+            content: createProject2Content()
+        };
+    } else if (projectId === 3) {
+        return createProject3Content();
+    } else if (projectId === 4) {
+        return createProject4Content();
+    }
+    return null;
+}
             
             // Create iframe for safe preview
             const iframe = document.createElement('iframe');
