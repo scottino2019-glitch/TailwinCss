@@ -1319,6 +1319,618 @@
         function closeProject() {
             document.getElementById('project-modal').classList.add('hidden');
         }
+function createProject3Content() {
+    return {
+        title: "📊 Progetto: Dashboard Admin",
+        content: `
+            <div class="grid grid-cols-1 xl:grid-cols-2 gap-8">
+                <div class="space-y-6">
+                    <div class="bg-purple-50 p-6 rounded-xl border border-purple-200">
+                        <h3 class="text-xl font-bold mb-4 text-purple-800">🎯 Obiettivi del Progetto</h3>
+                        <p class="mb-4 text-purple-700">Crea una dashboard amministrativa professionale con:</p>
+                        <ul class="list-disc list-inside space-y-2 text-purple-600">
+                            <li>Sidebar di navigazione con icone</li>
+                            <li>Header con barra di ricerca e profilo utente</li>
+                            <li>Metriche e statistiche in card</li>
+                            <li>Tabella dati con funzionalità base</li>
+                            <li>Grafici (simulati con div)</li>
+                            <li>Design a griglia responsiva</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-blue-50 p-6 rounded-xl border border-blue-200">
+                        <h4 class="text-lg font-semibold mb-3 text-blue-800">🛠️ Classi Tailwind da utilizzare:</h4>
+                        <div class="grid grid-cols-1 gap-3 text-sm">
+                            <div>
+                                <p class="font-semibold text-blue-700">Layout:</p>
+                                <p class="text-blue-600">grid, grid-cols-1 md:grid-cols-2 lg:grid-cols-4, col-span-*, gap-6</p>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-blue-700">Componenti:</p>
+                                <p class="text-blue-600">bg-white, rounded-xl, shadow-lg, p-6, border</p>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-blue-700">Tabelle:</p>
+                                <p class="text-blue-600">w-full, text-left, border-collapse, even:bg-gray-50</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-amber-50 p-6 rounded-xl border border-amber-200">
+                        <h4 class="text-lg font-semibold mb-3 text-amber-800">💡 Suggerimenti:</h4>
+                        <ul class="space-y-2 text-amber-700 text-sm">
+                            <li>• Usa <span class="code-inline">grid-cols-1 md:grid-cols-2 lg:grid-cols-4</span> per le metriche</li>
+                            <li>• Applica <span class="code-inline">col-span-1 md:col-span-2</span> per elementi più grandi</li>
+                            <li>• Usa <span class="code-inline">sticky top-0</span> per la sidebar fissa</li>
+                            <li>• Aggiungi <span class="code-inline">hover:bg-gray-100</span> per le righe della tabella</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <h4 class="text-lg font-semibold text-gray-800">💻 Editor Codice:</h4>
+                        <button onclick="previewProject(3)" class="bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded-lg font-medium shadow-lg hover:shadow-xl transition-all">
+                            👁️ Anteprima
+                        </button>
+                    </div>
+                    
+                    <textarea id="project3-code" class="w-full h-80 p-4 border-2 border-gray-300 rounded-xl font-mono text-sm resize-none focus:border-purple-500 focus:outline-none transition-colors"><!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin</title>
+    <script src="https://cdn.tailwindcss.com"><\/script>
+</head>
+<body class="bg-gray-100">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <div class="w-64 bg-gray-800 text-white sticky top-0 h-screen">
+            <div class="p-6">
+                <h1 class="text-2xl font-bold">AdminPanel</h1>
+                <p class="text-gray-400 text-sm">Dashboard amministrativa</p>
+            </div>
+            <nav class="mt-6">
+                <a href="#" class="flex items-center px-6 py-3 text-gray-100 bg-gray-700 border-l-4 border-blue-500">
+                    <span class="mr-3">📊</span>
+                    Dashboard
+                </a>
+                <a href="#" class="flex items-center px-6 py-3 mt-1 text-gray-400 hover:bg-gray-700 hover:text-gray-100">
+                    <span class="mr-3">👥</span>
+                    Utenti
+                </a>
+                <a href="#" class="flex items-center px-6 py-3 mt-1 text-gray-400 hover:bg-gray-700 hover:text-gray-100">
+                    <span class="mr-3">📦</span>
+                    Prodotti
+                </a>
+                <a href="#" class="flex items-center px-6 py-3 mt-1 text-gray-400 hover:bg-gray-700 hover:text-gray-100">
+                    <span class="mr-3">💰</span>
+                    Ordini
+                </a>
+                <a href="#" class="flex items-center px-6 py-3 mt-1 text-gray-400 hover:bg-gray-700 hover:text-gray-100">
+                    <span class="mr-3">⚙️</span>
+                    Impostazioni
+                </a>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 overflow-auto">
+            <!-- Header -->
+            <header class="bg-white shadow-sm">
+                <div class="flex items-center justify-between p-4">
+                    <div class="relative w-64">
+                        <input type="text" placeholder="Cerca..." class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <span class="absolute left-3 top-2.5 text-gray-400">🔍</span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <button class="p-2 bg-gray-100 rounded-full hover:bg-gray-200">
+                            <span class="text-xl">🔔</span>
+                        </button>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">A</div>
+                            <span>Admin</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content -->
+            <main class="p-6">
+                <h2 class="text-2xl font-bold mb-6">Dashboard</h2>
+                
+                <!-- Metrics -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-500">Utenti Totali</p>
+                                <p class="text-3xl font-bold">2,548</p>
+                            </div>
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                                <span class="text-blue-500 text-xl">👥</span>
+                            </div>
+                        </div>
+                        <p class="text-green-500 text-sm mt-2">↑ 12% dal mese scorso</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-500">Ordini</p>
+                                <p class="text-3xl font-bold">324</p>
+                            </div>
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                                <span class="text-green-500 text-xl">📦</span>
+                            </div>
+                        </div>
+                        <p class="text-green-500 text-sm mt-2">↑ 8% dal mese scorso</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-500">Ricavi</p>
+                                <p class="text-3xl font-bold">€24,850</p>
+                            </div>
+                            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+                                <span class="text-purple-500 text-xl">💰</span>
+                            </div>
+                        </div>
+                        <p class="text-red-500 text-sm mt-2">↓ 3% dal mese scorso</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-500">Tasso di Conversione</p>
+                                <p class="text-3xl font-bold">24.8%</p>
+                            </div>
+                            <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center">
+                                <span class="text-amber-500 text-xl">📈</span>
+                            </div>
+                        </div>
+                        <p class="text-green-500 text-sm mt-2">↑ 4% dal mese scorso</p>
+                    </div>
+                </div>
+                
+                <!-- Charts and Table -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                    <!-- Chart 1 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg lg:col-span-2">
+                        <h3 class="text-lg font-semibold mb-4">Andamento Vendite</h3>
+                        <div class="bg-gray-100 h-64 rounded-lg flex items-end justify-between p-4">
+                            <div class="flex flex-col items-center">
+                                <div class="w-6 bg-blue-500 rounded-t" style="height: 180px;"></div>
+                                <p class="text-xs mt-2">Lun</p>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="w-6 bg-blue-500 rounded-t" style="height: 220px;"></div>
+                                <p class="text-xs mt-2">Mar</p>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="w-6 bg-blue-500 rounded-t" style="height: 150px;"></div>
+                                <p class="text-xs mt-2">Mer</p>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="w-6 bg-blue-500 rounded-t" style="height: 250px;"></div>
+                                <p class="text-xs mt-2">Gio</p>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="w-6 bg-blue-500 rounded-t" style="height: 200px;"></div>
+                                <p class="text-xs mt-2">Ven</p>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="w-6 bg-blue-500 rounded-t" style="height: 170px;"></div>
+                                <p class="text-xs mt-2">Sab</p>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="w-6 bg-blue-500 rounded-t" style="height: 120px;"></div>
+                                <p class="text-xs mt-2">Dom</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Recent Activity -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <h3 class="text-lg font-semibold mb-4">Attività Recente</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                    <span class="text-green-500">✓</span>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Nuovo ordine #3245</p>
+                                    <p class="text-gray-500 text-sm">2 minuti fa</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                                    <span class="text-blue-500">👤</span>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Nuovo utente registrato</p>
+                                    <p class="text-gray-500 text-sm">10 minuti fa</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center mr-3">
+                                    <span class="text-amber-500">⚠️</span>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Prodotto esaurito: iPhone 13</p>
+                                    <p class="text-gray-500 text-sm">45 minuti fa</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Top Products -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <h3 class="text-lg font-semibold mb-4">Prodotti Popolari</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center">
+                                    <div class="w-10 h-10 bg-gray-200 rounded-lg mr-3"></div>
+                                    <div>
+                                        <p class="font-medium">iPhone 15 Pro</p>
+                                        <p class="text-gray-500 text-sm">Vendite: 245</p>
+                                    </div>
+                                </div>
+                                <span class="text-green-500 font-semibold">€1.199</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center">
+                                    <div class="w-10 h-10 bg-gray-200 rounded-lg mr-3"></div>
+                                    <div>
+                                        <p class="font-medium">MacBook Air M2</p>
+                                        <p class="text-gray-500 text-sm">Vendite: 187</p>
+                                    </div>
+                                </div>
+                                <span class="text-green-500 font-semibold">€1.299</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center">
+                                    <div class="w-10 h-10 bg-gray-200 rounded-lg mr-3"></div>
+                                    <div>
+                                        <p class="font-medium">AirPods Pro</p>
+                                        <p class="text-gray-500 text-sm">Vendite: 312</p>
+                                    </div>
+                                </div>
+                                <span class="text-green-500 font-semibold">€249</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Recent Orders Table -->
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <h3 class="text-lg font-semibold mb-4">Ordini Recenti</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">Ordine</th>
+                                    <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">Cliente</th>
+                                    <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">Data</th>
+                                    <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">Stato</th>
+                                    <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">Totale</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-6 py-4 whitespace-nowrap">#3245</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">Mario Rossi</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">12 Ott 2023</td>
+                                    <td class="px-6 py-4 whitespace-nowrap"><span class="px-2 py-1 text-xs bg-green-100 text-green-800 rounded-full">Completato</span></td>
+                                    <td class="px-6 py-4 whitespace-nowrap">€1.199,00</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-6 py-4 whitespace-nowrap">#3244</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">Luigi Verdi</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">12 Ott 2023</td>
+                                    <td class="px-6 py-4 whitespace-nowrap"><span class="px-2 py-1 text-xs bg-yellow-100 text-yellow-800 rounded-full">In elaborazione</span></td>
+                                    <td class="px-6 py-4 whitespace-nowrap">€2.499,00</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-6 py-4 whitespace-nowrap">#3243</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">Giulia Bianchi</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">11 Ott 2023</td>
+                                    <td class="px-6 py-4 whitespace-nowrap"><span class="px-2 py-1 text-xs bg-blue-100 text-blue-800 rounded-full">Spedito</span></td>
+                                    <td class="px-6 py-4 whitespace-nowrap">€499,00</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-6 py-4 whitespace-nowrap">#3242</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">Paolo Neri</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">11 Ott 2023</td>
+                                    <td class="px-6 py-4 whitespace-nowrap"><span class="px-2 py-1 text-xs bg-green-100 text-green-800 rounded-full">Completato</span></td>
+                                    <td class="px-6 py-4 whitespace-nowrap">€1.799,00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html></textarea>
+                </div>
+                
+                <div id="project3-preview" class="xl:col-span-2 mt-8 border-2 border-gray-300 rounded-xl bg-gray-50 overflow-hidden" style="min-height: 500px;">
+                    <div class="p-8 text-center text-gray-500">
+                        <div class="text-4xl mb-4">📊</div>
+                        <p class="text-lg">Clicca "Anteprima" per vedere la tua dashboard</p>
+                    </div>
+                </div>
+            </div>
+        `
+    };
+}
+function createProject4Content() {
+    return {
+        title: "📱 Progetto: App Mobile UI",
+        content: `
+            <div class="grid grid-cols-1 xl:grid-cols-2 gap-8">
+                <div class="space-y-6">
+                    <div class="bg-orange-50 p-6 rounded-xl border border-orange-200">
+                        <h3 class="text-xl font-bold mb-4 text-orange-800">🎯 Obiettivi del Progetto</h3>
+                        <p class="mb-4 text-orange-700">Crea l'interfaccia di un'app mobile con:</p>
+                        <ul class="list-disc list-inside space-y-2 text-orange-600">
+                            <li>Design mobile-first con dimensioni appropriate</li>
+                            <li>Bottom navigation bar con icone</li>
+                            <li>Header con titolo e azioni</li>
+                            <li>Card scorrevoli e liste</li>
+                            <li>Animazioni e transizioni fluide</li>
+                            <li>Elementi interattivi con feedback tattile</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-pink-50 p-6 rounded-xl border border-pink-200">
+                        <h4 class="text-lg font-semibold mb-3 text-pink-800">🎨 Design Mobile-First:</h4>
+                        <div class="grid grid-cols-1 gap-3 text-sm">
+                            <div>
+                                <p class="font-semibold text-pink-700">Dimensioni:</p>
+                                <p class="text-pink-600">max-w-md mx-auto (per simulare un telefono)</p>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-pink-700">Touch Target:</p>
+                                <p class="text-pink-600">min-h-12, p-3 (almeno 44px per elementi cliccabili)</p>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-pink-700">Scroll:</p>
+                                <p class="text-pink-600">overflow-y-auto, snap-y, snap-mandatory</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-purple-50 p-6 rounded-xl border border-purple-200">
+                        <h4 class="text-lg font-semibold mb-3 text-purple-800">✨ Animazioni e Interazioni:</h4>
+                        <ul class="space-y-2 text-purple-700 text-sm">
+                            <li>• Usa <span class="code-inline">transition-all duration-300</span> per transizioni fluide</li>
+                            <li>• Applica <span class="code-inline">active:scale-95</span> per effetto pressione</li>
+                            <li>• Utilizza <span class="code-inline">group</span> e <span class="code-inline">group-hover:</span> per effetti complessi</li>
+                            <li>• Sperimenta con <span class="code-inline">animate-bounce</span> e <span class="code-inline">animate-pulse</span></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <h4 class="text-lg font-semibold text-gray-800">💻 Editor Codice:</h4>
+                        <button onclick="previewProject(4)" class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg font-medium shadow-lg hover:shadow-xl transition-all">
+                            👁️ Anteprima
+                        </button>
+                    </div>
+                    
+                    <textarea id="project4-code" class="w-full h-80 p-4 border-2 border-gray-300 rounded-xl font-mono text-sm resize-none focus:border-orange-500 focus:outline-none transition-colors"><!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Mobile UI</title>
+    <script src="https://cdn.tailwindcss.com"><\/script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+    <!-- Mobile Device Frame -->
+    <div class="max-w-md w-full bg-black rounded-3xl overflow-hidden shadow-2xl">
+        <!-- Status Bar -->
+        <div class="bg-black pt-2 px-4">
+            <div class="flex justify-between items-center text-white text-xs">
+                <span>9:41</span>
+                <div class="flex items-center space-x-1">
+                    <span>📶</span>
+                    <span>📡</span>
+                    <span>🔋</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Screen Content -->
+        <div class="bg-gray-100 h-[600px] overflow-y-auto">
+            <!-- Header -->
+            <header class="bg-white p-4 sticky top-0 z-10 shadow-sm">
+                <div class="flex items-center justify-between">
+                    <button class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center active:scale-95 transition-transform">
+                        <span>←</span>
+                    </button>
+                    <h1 class="text-xl font-bold">MusicApp</h1>
+                    <button class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center active:scale-95 transition-transform">
+                        <span>🔍</span>
+                    </button>
+                </div>
+            </header>
+            
+            <!-- Hero Section -->
+            <div class="relative p-4">
+                <div class="rounded-2xl overflow-hidden shadow-lg">
+                    <div class="h-48 bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center">
+                        <div class="text-center text-white p-4">
+                            <h2 class="text-2xl font-bold mb-2">Playlist della Settimana</h2>
+                            <p class="text-sm">Scopri le hit più ascoltate</p>
+                            <button class="mt-4 bg-white text-purple-600 px-6 py-2 rounded-full font-semibold active:scale-95 transition-transform">
+                                ASCOLTA ORA
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Quick Actions -->
+            <div class="p-4">
+                <h3 class="text-lg font-semibold mb-3">Categorie</h3>
+                <div class="grid grid-cols-4 gap-3">
+                    <div class="bg-white rounded-xl p-3 text-center shadow-sm active:scale-95 transition-transform">
+                        <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-2">
+                            <span class="text-blue-500 text-xl">🎵</span>
+                        </div>
+                        <p class="text-xs font-medium">Pop</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-3 text-center shadow-sm active:scale-95 transition-transform">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mx-auto mb-2">
+                            <span class="text-red-500 text-xl">🎸</span>
+                        </div>
+                        <p class="text-xs font-medium">Rock</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-3 text-center shadow-sm active:scale-95 transition-transform">
+                        <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-2">
+                            <span class="text-green-500 text-xl">🎧</span>
+                        </div>
+                        <p class="text-xs font-medium">Hip-Hop</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-3 text-center shadow-sm active:scale-95 transition-transform">
+                        <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-2">
+                            <span class="text-purple-500 text-xl">🎹</span>
+                        </div>
+                        <p class="text-xs font-medium">Elettro</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Recommended Playlists -->
+            <div class="p-4">
+                <div class="flex items-center justify-between mb-3">
+                    <h3 class="text-lg font-semibold">Consigliati per te</h3>
+                    <button class="text-blue-500 text-sm font-medium">Vedi tutti</button>
+                </div>
+                
+                <div class="space-y-3">
+                    <div class="bg-white rounded-2xl p-3 flex items-center space-x-3 shadow-sm active:scale-[0.98] transition-transform">
+                        <div class="w-16 h-16 bg-gradient-to-r from-blue-400 to-blue-600 rounded-xl flex items-center justify-center">
+                            <span class="text-white text-2xl">🎶</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold">Hit Estive 2023</h4>
+                            <p class="text-gray-500 text-sm">Playlist • 32 brani</p>
+                        </div>
+                        <button class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center">
+                            <span>▶️</span>
+                        </button>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-3 flex items-center space-x-3 shadow-sm active:scale-[0.98] transition-transform">
+                        <div class="w-16 h-16 bg-gradient-to-r from-red-400 to-red-600 rounded-xl flex items-center justify-center">
+                            <span class="text-white text-2xl">🔥</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold">Viral Hits</h4>
+                            <p class="text-gray-500 text-sm">Playlist • 45 brani</p>
+                        </div>
+                        <button class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center">
+                            <span>▶️</span>
+                        </button>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-3 flex items-center space-x-3 shadow-sm active:scale-[0.98] transition-transform">
+                        <div class="w-16 h-16 bg-gradient-to-r from-green-400 to-green-600 rounded-xl flex items-center justify-center">
+                            <span class="text-white text-2xl">💚</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold">Chill Vibes</h4>
+                            <p class="text-gray-500 text-sm">Playlist • 28 brani</p>
+                        </div>
+                        <button class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center">
+                            <span>▶️</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Recently Played -->
+            <div class="p-4">
+                <div class="flex items-center justify-between mb-3">
+                    <h3 class="text-lg font-semibold">Riprodotti di recente</h3>
+                    <button class="text-blue-500 text-sm font-medium">Vedi cronologia</button>
+                </div>
+                
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm">
+                    <div class="flex items-center p-3 border-b border-gray-100">
+                        <div class="w-10 h-10 bg-gray-200 rounded-lg mr-3"></div>
+                        <div class="flex-1">
+                            <h4 class="font-medium">Blinding Lights</h4>
+                            <p class="text-gray-500 text-sm">The Weeknd</p>
+                        </div>
+                        <span class="text-gray-400 text-sm">3:20</span>
+                    </div>
+                    
+                    <div class="flex items-center p-3 border-b border-gray-100">
+                        <div class="w-10 h-10 bg-gray-200 rounded-lg mr-3"></div>
+                        <div class="flex-1">
+                            <h4 class="font-medium">Flowers</h4>
+                            <p class="text-gray-500 text-sm">Miley Cyrus</p>
+                        </div>
+                        <span class="text-gray-400 text-sm">3:20</span>
+                    </div>
+                    
+                    <div class="flex items-center p-3">
+                        <div class="w-10 h-10 bg-gray-200 rounded-lg mr-3"></div>
+                        <div class="flex-1">
+                            <h4 class="font-medium">Calm Down</h4>
+                            <p class="text-gray-500 text-sm">Rema & Selena Gomez</p>
+                        </div>
+                        <span class="text-gray-400 text-sm">3:20</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom Navigation -->
+        <div class="bg-white border-t border-gray-200">
+            <div class="flex justify-around items-center p-3">
+                <button class="flex flex-col items-center space-y-1 text-purple-600">
+                    <span class="text-xl">🏠</span>
+                    <span class="text-xs font-medium">Home</span>
+                </button>
+                <button class="flex flex-col items-center space-y-1 text-gray-500">
+                    <span class="text-xl">🔍</span>
+                    <span class="text-xs">Cerca</span>
+                </button>
+                <button class="flex flex-col items-center space-y-1 text-gray-500">
+                    <span class="text-xl">📚</span>
+                    <span class="text-xs">Libreria</span>
+                </button>
+                <button class="flex flex-col items-center space-y-1 text-gray-500">
+                    <span class="text-xl">⚙️</span>
+                    <span class="text-xs">Impostazioni</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html></textarea>
+                </div>
+                
+                <div id="project4-preview" class="xl:col-span-2 mt-8 border-2 border-gray-300 rounded-xl bg-gray-50 overflow-hidden" style="min-height: 500px;">
+                    <div class="p-8 text-center text-gray-500">
+                        <div class="text-4xl mb-4">📱</div>
+                        <p class="text-lg">Clicca "Anteprima" per vedere la tua app mobile</p>
+                    </div>
+                </div>
+            </div>
+        `
+    };
+}
 
         function previewProject(projectId) {
             const code = document.getElementById(`project${projectId}-code`).value;
